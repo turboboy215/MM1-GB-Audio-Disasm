@@ -114,6 +114,36 @@ Ax = Jump to position/repeat (2)
 
 *Since the vibrato routines are not actually called by the sound engine, these functions have no effect.
 
+Some higher VCMDs can only be used on certain channels, since each channel has a separate VCMD table and some VCMDs are listed as 0 (invalid) on some channels but available on others. The following is a comparison of available commands for each channel:
+
+	CH1	CH2	CH3	CH4
+FF	X	X	X	X
+FE	X	X	X	X
+FD	X	X	X	X
+FC	X	X	X	X
+FB	X	X	-	X
+FA	X	X	X	X
+F9	X	X	X	X
+F8	X	X	X	X
+F7	X	X	X	-
+F6	X	X	X	-
+F5	X	-	-	-
+F4	X	X	-	-
+F3	-	-	-	-
+F2	-	-	X	-
+F1	X	X	X	X
+F0	X	X	X	X
+EF	X	X	X	-
+EE	X	X	X	X
+ED	X	X	X	-
+EC	X	X	X	X
+EB	X	X	X	X
+EA	X	X	X	X
+E9	X	X	X	X
+E8	X	X	X	X
+E7	X	X	X	-
+E6	X	X	X	X
+
 Envelope sequences
 ===========================================
 Envelope sequences are used to change the volume over a period of time. These are enabled or disabled, or controlled with the VCMDs as described above. Each envelope sequence is 16 bytes long before it stays on the last value in the sequence. These are executed at a speed determined with commands as above.
